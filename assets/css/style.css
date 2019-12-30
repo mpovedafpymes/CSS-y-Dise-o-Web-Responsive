@@ -1,0 +1,212 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #02010a;
+}
+
+main{
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1000px;
+    min-height: 100vh;
+    position: relative;
+    -webkit-animation-name: animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: animation;
+    animation-duration: 1s;
+}
+
+main > *{
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Standard syntax */
+@keyframes animation {
+    0%   {left:0; top:100%;}
+    80%  {left:0px; top:-70px;}
+    100%  {left:0px; top:0px;}
+
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes animation {
+    0%   {left:0; top:100%;}
+    80%  {left:0px; top:-70px;}
+    100%  {left:0px; top:0px;}
+}
+
+div.encabezado{
+    color: white;
+    grid-area: encabezado;
+    background-color: #5b7989;
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+}
+
+main > div.encabezado{
+    display: block;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #C6d5c5;
+
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+}
+
+footer{
+    display: grid;
+    height: 100%;
+    padding: 5px 15px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, minmax(min-content));
+    grid-template-areas: 
+    "contacto"
+    "terminos"
+    "redes_sociales"
+    "derechos";
+    
+}
+
+.contacto{
+    grid-area: contacto;
+    background-color: #C6d5c5;
+}
+
+.terminos{
+    grid-area: terminos;
+    background-color: #C6d5c5;
+}
+
+.redes_sociales{
+    grid-area: redes_sociales;
+    background-color: #C6d5c5;
+}
+
+.derechos{
+    grid-area: derechos;
+    background-color: #C6d5c5;
+}
+
+header{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "h1"
+    "nav";
+}
+
+h1{
+    grid-area: h1;
+    text-shadow: 2px 2px 2px #02010a;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+  
+nav ul li {
+
+    display: inline-block;
+    margin: 0 .1rem;
+
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+a.active:link, a.active:visited, a.active:active {
+    text-decoration:none;
+}
+
+.img_redes li {
+
+    display: block;
+    margin: 0 .1rem;
+
+}
+
+.sombra img{
+    width: 80%;
+    display:block;
+    margin: auto;
+    border-radius: 1px; box-shadow: 2px 2px
+}
+
+
+
+@media(min-width: 900px){
+    main{
+        width: 90%;
+        margin: 20px auto;
+        max-width: 1000px;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 140px repeat(3, minmax(min-content));
+        grid-template-areas: 
+            "encabezado encabezado"
+            "Contenido Contenido"
+            "img_left img_right"
+            "footer footer";
+    
+            position: relative;
+            -webkit-animation-name: animation; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+            animation-name: animation;
+            animation-duration: 1s;
+    }
+    header{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 70px;
+        grid-template-areas: 
+        "h1 nav";
+    }
+
+    h1{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    nav{
+        display: flex;
+        justify-content: right;
+        align-items: right;
+    }
+
+    footer{
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 120px;
+        grid-template-areas: 
+        "contacto terminos redes_sociales derechos";
+        
+    }
+}

@@ -1,0 +1,80 @@
+main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 140px repeat(4, minmax(min-content));
+    grid-template-areas: 
+        "encabezado"
+        "Contenido"
+        "img_left"
+        "img_right"
+        "footer";
+
+}
+
+article{
+    grid-area: Contenido;
+    background-color: #82c3a6;
+}
+
+aside:first-of-type {
+    grid-area: img_left;
+    background-color: #d5c75f;
+}
+
+aside:last-of-type{
+    grid-area: img_right;
+    background-color: #d5c75f;
+    
+}
+
+article, aside{
+    padding: 15px;
+}
+
+figcaption{
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.paisaje{
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+    transition: 1s ease-in-out;
+}
+.paisaje:hover{ 
+    -webkit-transform:rotateZ(2deg); 
+    -ms-transform:rotateZ(2deg); 
+    transform:rotateZ(2deg); 
+}
+
+@-webkit-keyframes retrato{ 
+    15% { -webkit-transform: translateX(5px); transform: translateX(5px); } 
+    30% { -webkit-transform: translateX(-5px); transform: translateX(-5px); } 
+    50% { -webkit-transform: translateX(3px); transform: translateX(3px); } 
+    65% { -webkit-transform: translateX(-3px); transform: translateX(-3px); } 
+    80% { -webkit-transform: translateX(2px); transform: translateX(2px); } 
+    100% { -webkit-transform: translateX(0); transform: translateX(0); } 
+} 
+    
+@keyframes retrato { 
+    15% { -webkit-transform: translateX(5px); transform: translateX(5px); } 
+    30% { -webkit-transform: translateX(-5px); transform: translateX(-5px); } 
+    50% { -webkit-transform: translateX(3px); transform: translateX(3px); } 
+    65% { -webkit-transform: translateX(-3px); transform: translateX(-3px); } 
+    80% { -webkit-transform: translateX(2px); transform: translateX(2px); } 
+    100% { -webkit-transform: translateX(0); transform: translateX(0); } 
+} 
+    
+.retrato:hover { 
+    -webkit-animation: retrato 1s ease; 
+    animation: retrato 1s ease; 
+    -webkit-animation-iteration-count: 1; 
+    animation-iteration-count: 1; 
+}
+
+
+
+
